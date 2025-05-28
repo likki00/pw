@@ -1,0 +1,825 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+@import url('https://boxicons.com/boxicons/2.0.7/css/boxicons.min.css');
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #c5c5c5; /* Dark background for the entire page */
+  color: #fff;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Map as background */
+.mapcontainer {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* Full viewport height */
+  height: 100vh; /* Ensures the map covers the full height */
+  background: url('image.png') center center/cover no-repeat;
+  flex: 1 0 auto; /* Allows the map to grow and fill available space */
+  display: flex;
+}
+
+.map-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 600px;
+  object-fit: cover;
+}
+/* Overlay positioning for desktop */
+.overlays {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  z-index: 2;
+  transition: transform 0.2s;
+}
+
+.overlay img {
+  border-radius: 12px;
+  width: 200px;
+  height: auto;
+}
+
+.overlay span {
+  margin-top: 8px;
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  white-space: nowrap;
+  font-weight: 500;
+  background: rgba(0,0,0,0.5);
+}
+
+
+.overlay:hover {
+  transform: scale(1.05);
+  z-index: 3;
+}
+
+/* Footer styling */
+.footer {
+  width: 100%;
+  background: #222;
+  color: #fff;
+  padding: 20px 0 10px 0;
+  text-align: center;
+  position: relative;
+  margin-top: auto;
+}
+
+.social-links {
+  margin-bottom: 10px;
+}
+
+.social-links a {
+  color: #fff;
+  margin: 0 12px;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.social-links a:hover {
+  color: #61dafb;
+}
+
+.copyright {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+
+/* ---------- General Reset and Body Styles ---------- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+ /* ---------- Map Container Setup ---------- */
+  
+  /* ---------- Base Map Image Styling ---------- */
+  .mapcontainer img {
+    width: 100%; /* Makes image responsive */
+    height: auto;
+    display: block; /* Removes default image spacing */
+  }
+  
+  /* ---------- Overlay Container for Each Icon ---------- */
+  .overlay {
+    position: absolute; /* Positioned over the map */
+    text-align: center; /* Centers any text below the image */
+    transition: transform 0.3s ease; /* Smooth scale effect on hover */
+  }
+  
+  /* ---------- Icon Image Styling ---------- */
+  .overlay img {
+    width: 200px; /* You can adjust this based on your icon sizes */
+    height: auto;
+  }
+  
+  /* ---------- Hover Effect on Icons ---------- */
+  .overlay:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    z-index: 2; /* Bring hovered icon above others */
+  }
+  
+  /* ---------- Hidden Text Span Below Each Icon ---------- */
+  .overlay span {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position it right below the image */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Fine-tune centering */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    white-space: nowrap; /* Prevent text from wrapping */
+  }
+  
+  /* ---------- Show Text on Hover ---------- */
+  .overlay:hover span {
+    display: block;
+  }
+
+  /* ---------- Footer Styling ---------- */
+footer {
+    background-color: #333; /* Dark background */
+    color: white; /* White text */
+    text-align: center; /* Centered text */
+    padding: 20px 0; /* Padding for spacing */
+    border: 2px solid rgb(161, 74, 74);
+    position: relative; /* For positioning child elements */
+}
+footer p {
+    margin: 0; /* Remove default margin */
+    font-size: 14px; /* Font size for the text */
+}
+
+
+
+
+  /*------------About me ------------*/
+.about{
+     display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(19, 18, 17);
+}
+
+.about-img {
+     width: 300px;
+     height: 300px;
+     overflow: hidden;
+     margin-right: 20px;
+}
+
+.about-img img {
+     width: 100%;
+     height: 100%;
+}
+
+.about-content {
+     max-width: 600px;
+     color: white;
+}
+
+.about-content h1 {
+     font-size: 36px;
+     margin-bottom: 20px;
+}
+
+
+.about-content p {
+     font-size: 15px;
+     line-height: 1.6;
+     margin-bottom: 20px;
+}
+
+.heading{
+      text-align: center;
+      color: white;
+}
+
+.btn {
+      background-color: #3761af; /* Green background */
+      color: white; /* White text */
+      padding: 10px 20px; /* Some padding */
+      border: none; /* Remove borders */
+      border-radius: 5px; /* Rounded corners */
+      cursor: pointer; /* Pointer cursor on hover */
+      text-decoration: none; /* Remove underline from links */
+   }
+
+
+        /*------------------------------ skills section------------------------------*/
+.skills-section {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.skills-section h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.skill-card {
+  width: 120px;
+  text-align: center;
+}
+
+.skill-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.skill-card p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* education section */
+.education-section {
+    background-color: #0c0a0a;
+    padding: 32px 0;
+}
+
+.education-section h2 {
+    color: #09bcc9;
+    text-align: center;
+    margin-bottom: 28px;
+    font-size: 2rem;
+}
+
+.education-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 28px;
+}
+
+.education-card {
+    background: #c2c0bb;
+    color: #000000;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    padding: 24px 32px;
+    min-width: 260px;
+    max-width: 340px;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.education-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #161a19;
+}
+
+.education-card p {
+    margin: 6px 0;
+    font-size: 1rem;
+}
+
+
+.education-card:hover {
+  transform: translateY(-5px);
+}
+/* interships */
+section {
+  padding: 40px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+}
+
+section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+section p {
+  font-size: 16px;
+  color: #666;
+}
+
+/*--------------------------------------Achievements Section-----------------------------------------*/
+
+/* Set global styles for the page */
+body {
+  font-family: Arial, sans-serif; /* Clean, readable font */
+  margin: 0;
+  padding: 0;
+  color: #333; /* Dark text for contrast */
+}
+
+/* Main container for the certificate sections */
+.certificate-section {
+  padding: 40px 20px; /* Space around content */
+  max-width: 1200px; /* Maximum width of the section */
+  margin: auto; /* Center the section */
+}
+
+/* Individual section (Curricular or Volunteering) */
+.activities {
+  margin-bottom: 50px; /* Space below each section */
+}
+
+/* Section heading styling */
+.activities h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #2c3e50; /* Dark blue color */
+  border-bottom: 2px solid #3498db; /* Underline effect */
+  padding-bottom: 8px;
+}
+
+/* Card container for each certificate */
+.card {
+  background-color: #a8b6e4; /* White background */
+  padding: 16px; /* Inner spacing */
+  margin-bottom: 20px; /* Space between cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 10px; /* Rounded corners */
+  transition: transform 0.2s ease; /* Smooth hover effect */
+}
+
+/* Hover effect to slightly zoom the card */
+.card:hover {
+  transform: scale(1.02); /* Slight scale up on hover */
+}
+
+/* Styling the certificate images */
+.card img {
+  width: 100%; /* Full width within the card */
+  max-width: 600px; /* Limit maximum size */
+  height: auto; /* Keep image aspect ratio */
+  border-radius: 8px; /* Rounded corners */
+  display: block;
+  margin: auto; /* Center the image */;
+}
+
+/* Text below the images */
+.card p {
+  margin-top: 12px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration-color: #ddd;
+}
+
+.container {
+     width: 90%;
+     margin : 0 auto;
+     padding: 1rem;
+}
+
+.flex-container {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 1rem;
+     justify-content: center;
+}
+/* Responsive design for smaller screens */
+
+.education-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap to the next line if needed */
+  gap: 30px;
+  justify-content: space-between; /* Distribute cards evenly */
+}
+
+.education-card {
+  width: calc(50% - 15px); /* Roughly two cards per row with some spacing */
+  /* Other styles for the card */
+}
+
+.education-section {
+    background-color: #000;
+    padding: 32px 0;
+    min-height: 100vh; /* This makes the section fill the whole screen height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center the content */
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 1rem;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.card {
+  flex: 1 1 300px;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/*-------------------------------Skills-------------------------*/
+.skills-section {
+    background: #181818;
+    padding: 40px 0;
+    min-height: 100vh;
+}
+.header h1, .skills-section h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+.skills-container {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.skill-bar {
+    display: flex;
+    align-items: center;
+    background: #232323;
+    border-radius: 10px;
+    padding: 16px 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    gap: 18px;
+}
+.skill-bar i {
+    font-size: 2rem;
+    min-width: 40px;
+}
+.skill-name {
+    flex: 1;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.progress-bar {
+    background: #333;
+    border-radius: 8px;
+    width: 40%;
+    height: 12px;
+    margin: 0 16px;
+    overflow: hidden;
+}
+.progress {
+    background: linear-gradient(90deg, #3761af 60%, #61dafb 100%);
+    height: 100%;
+    border-radius: 8px;
+    transition: width 0.6s cubic-bezier(.4,0,.2,1);
+}
+.skill-percent {
+    color: #fff;
+    font-size: 1rem;
+    min-width: 40px;
+    text-align: right;
+}
+
+/* --- Skills Progress Bars --- */
+.Technical-bars {
+    width: 90%;
+    max-width: 600px;
+    margin: 30px auto;
+}
+.bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px;
+}
+.bar i {
+    font-size: 2rem;
+    margin-right: 18px;
+}
+.info span {
+    font-size: 1.1rem;
+    color: #fff;
+    min-width: 90px;
+    display: inline-block;
+}
+.progress-line {
+    background: #222;
+    height: 12px;
+    border-radius: 8px;
+    width: 60%;
+    margin-left: 18px;
+    position: relative;
+    overflow: hidden;
+}
+.progress-line span {
+    display: block;
+    height: 100%;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #3761af 60%, #61dafb 100%);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.progress-line.html span { width: 90%; }
+.progress-line.css span { width: 85%; }
+.progress-line.JavaScript span { width: 75%; }
+.progress-line.JAVA span { width: 70%; }
+.progress-line.Python span { width: 80%; }
+.progress-line.MYSQL span { width: 70%; }
+.progress-line.REACT span { width: 65%; }
+
+/*-------------------------------------- Responsive Design -----------------------------------------*/
+.projects-section {
+    background: #181818;
+    padding: 50px 0;
+    min-height: 100vh;
+}
+.projects-section h2 {
+    color: #fff;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+}
+.project-card {
+    background: #232323;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    padding: 24px 20px 32px 20px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+}
+.project-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+}
+.project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    background: #444;
+}
+.project-card h3 {
+    color: #61dafb;
+    margin: 10px 0 8px 0;
+    font-size: 1.3rem;
+}
+.project-card p {
+    color: #eee;
+    font-size: 1rem;
+    margin-bottom: 18px;
+    text-align: center;
+}
+.github-link {
+    color: #fff;
+    font-size: 2rem;
+    transition: color 0.2s;
+    position: absolute;
+    bottom: 18px;
+    right: 22px;
+}
+.github-link:hover {
+    color: #61dafb;
+}
+
+
+
+/* Responsive Design */
+
+@media (max-width: 900px) {
+  .mapcontainer {
+    min-height: 400px;
+  }
+  .overlay img {
+    width: 120px !important;
+  }
+  .overlay span {
+    font-size: 0.9rem;
+    padding: 4px 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .mapcontainer {
+    min-height: 100vh;
+    height: 100vh;
+    background: url('image.png') center center/cover no-repeat;
+  }
+  .overlays {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+  .overlay {
+    position: static !important;
+    margin: 18px 0;
+    width: 90%;
+    max-width: 320px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background: none;
+  }
+  .overlay img {
+    width: 80px !important;
+    height: 60px !important;
+    margin-right: 16px;
+  }
+  .overlay span {
+    display: inline !important;
+    position: static;
+    background: none;
+    color: #fff;
+    font-size: 1rem;
+    margin-top: 0;
+    padding: 0;
+    font-weight: 600;
+    text-shadow: 1px 1px 4px #000;
+  }
+  .footer {
+    padding: 14px 0 6px 0;
+    font-size: 0.95rem;
+  }
+  .social-links a {
+    font-size: 1.2rem;
+    margin: 0 8px;
+  }
+}
+
+/* Hide inline styles for overlays on mobile */
+@media (max-width: 600px) {
+  .overlay[style] {
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+  }
+  .overlay span {
+    display: inline !important;
+    position: static;
+    background: none;
+    color: #fff;
+    font-size: 1rem;
+    margin-top: 0;
+    padding: 0;
+    font-weight: 600;
+    text-shadow: 1px 1px 4px #000;
+  }
+}
+
+
+
+
+/* About Section Responsive Styling */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(19, 18, 17);
+    min-height: 100vh; /* Ensures the section fills the viewport height */
+}
+.about-content {
+    max-width: 600px;
+    color: #fff;
+    font-size: 0.9rem;           /* Smaller, readable font size */
+    line-height: 1.5;          /* More space between lines for readability */
+    text-align: justify;       /* Neat alignment on both sides */
+    margin: 0 ;            /* Center the content */
+    padding: 0 10px;           /* Padding for mobile screens */
+}
+
+.about-content .heading {
+    font-size: 2rem;           /* Adjust heading size */
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.about-content p {
+    margin-bottom: 15px;       /* Space between paragraphs */
+    font-size: 0.9rem;           /* Ensure paragraph font is not too large */
+    color: #cebfbf;
+}
+
+@media (max-width: 800px) {
+  .about {
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 8px;
+    min-height: auto;
+  }
+  .about-img img {
+    margin: 0 auto;
+    display: block;
+  }
+  .about-content {
+    text-align: center;
+    max-width: 95vw;
+  }
+    .about-img {
+    margin-right: 0;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    width: 80%;
+  }
+}
+
+/* Responsive styles for mobile  education page*/
+@media (max-width: 600px) {
+    .education-section {
+        padding: 18px 0;
+    }
+    .education-container {
+        flex-direction: column;
+        gap: 18px;
+        align-items: center;
+    }
+    .education-card {
+        padding: 16px 10px;
+        min-width: 0;
+        max-width: 95vw;
+        width: 100%;
+        font-size: 0.98rem;
+    }
+    .education-card h3 {
+        font-size: 1.05rem;
+    }
+}
+
+
+/* Responsive styles for mobile intership page */
+@media (max-width: 600px) {
+    .education-section {
+        padding: 18px 0;
+    }
+    .education-container {
+        flex-direction: column;
+        gap: 18px;
+        align-items: center;
+    }
+    .education-card {
+        padding: 16px 10px;
+        min-width: 0;
+        max-width: 95vw;
+        width: 100%;
+        font-size: 0.98rem;
+    }
+    .education-card h3 {
+        font-size: 1.05rem;
+    }
+}
